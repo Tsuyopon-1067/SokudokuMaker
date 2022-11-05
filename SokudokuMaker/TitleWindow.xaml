@@ -45,7 +45,8 @@
                     FontSize="14" FontWeight="Bold"/>
         <Button Grid.Row="2" 
                 Grid.Column="1"
-                Margin="5" Click="ClickButton">
+                Height="auto"
+                Margin="5,5,5,5" Click="ClickButton" Cursor="Hand">
             <TextBlock Text="Start" FontSize="28" FontWeight="Bold"/>
         </Button>
 

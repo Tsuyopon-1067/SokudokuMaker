@@ -11,41 +11,72 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label FontSize="50">Page2</Label>
 
-        <TextBlock x:Name="ReadText0"
-                   Grid.Row="1" 
+        <!-- タイトル -->
+        <TextBlock x:Name="TitleText"
+                   Grid.Row="0" 
                    Grid.Column="0" 
-                   Grid.ColumnSpan="2"
-                   Text="aaa"
-                   TextAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="24" FontWeight="Bold" Foreground="#FF464646"/>
-        <TextBlock x:Name="ReadText1"
-                   Grid.Row="2" 
-                   Grid.Column="0" 
-                   Grid.ColumnSpan="2"
-                   Text="aaa"
+                   Text="Title"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="24" FontWeight="Bold"/>
-        <TextBlock x:Name="ReadText2"
+
+        <!-- テキスト表示領域 -->
+        <UniformGrid Grid.Row="1" Rows="3" Margin="5">
+            <TextBlock x:Name="ReadText0"
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   Text="aaa"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
+            <TextBlock x:Name="ReadText1"
+                   Grid.Row="2" 
+                   Grid.Column="0" 
+                   Text="aaa"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="48" FontWeight="Bold"/>
+            <TextBlock x:Name="ReadText2"
                    Grid.Row="3" 
                    Grid.Column="0" 
-                   Grid.ColumnSpan="2"
                    Text="aaab"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="24" FontWeight="Bold" Foreground="#FF464646"/>
+                   FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
+        </UniformGrid>
+
+        <!-- ボタン等インターフェース -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="4"
+                Grid.Column="0"
+                Height="auto"
+                Margin="5,5,5,5" Cursor="Hand">
+                <TextBlock Text="Start" FontSize="28" FontWeight="Bold"/>
+            </Button>
+            <UniformGrid  Grid.Column="2" Rows="2">
+                <Slider x:Name="wordSlider" VerticalAlignment="Center" />
+                <Slider x:Name="speedSlider" VerticalAlignment="Center" />
+            </UniformGrid>
+            <UniformGrid  Grid.Column="4" Rows="2">
+                <TextBlock Text="111" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <TextBlock Text="111" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </UniformGrid>
+        </Grid>
     </Grid>
 </Page>
