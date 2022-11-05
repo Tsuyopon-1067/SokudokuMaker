@@ -85,10 +85,12 @@ namespace SokudokuMaker
                 if (isStart)
                 {
                     timer.Start();
+                    StartStopIconImage.Source = IconP.Source;
                 }
                 else
                 {
                     timer.Stop();
+                    StartStopIconImage.Source = IconR.Source;
                 }
             }
         }
