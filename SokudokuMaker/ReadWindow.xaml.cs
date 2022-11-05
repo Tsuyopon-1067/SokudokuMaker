@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Timers;
-using System.Diagnostics;
 
 namespace SokudokuMaker
 {
@@ -13,7 +12,7 @@ namespace SokudokuMaker
         private string[] sentenceArray;
         private TextBlock[] readText = new TextBlock[3];
         private int nowWord = 1;
-        private int wpm = 80;
+        private int wpm = 300;
         private int timerSpeed = 100;
         private bool isStart = false; // タイマー稼働中はtrue
         private Timer timer;
@@ -35,7 +34,6 @@ namespace SokudokuMaker
             NowWordSlider.Maximum = sentenceArray.Length-1;
 
             timer = new Timer();
-            Debug.WriteLine(nowWord.ToString());
             timer.Elapsed += Tick;
             StartStopTimer();
         }
@@ -79,7 +77,6 @@ namespace SokudokuMaker
         }
         private void StartStopTimer()
         {
-            Debug.WriteLine("startstop");
             timerSpeed = (int)(60000 / wpm);
 
             if (timer != null)
@@ -141,7 +138,18 @@ namespace SokudokuMaker
         {
             isStart = !isStart;
             StartStopTimer();
-            Debug.WriteLine("btn");
+        }
+
+        private void WpmTextBoxChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(WpmTextBox.Text, out wpm)) ;
+            RenewWpm();
+        }
+
+        private void NowWordTextBoxChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(NowWordTextBox.Text, out nowWord)) ;
+            RenewNowWord();
         }
     }
 }
