@@ -23,7 +23,7 @@ namespace SokudokuMaker
             this.book = book;
             book.SplitAllSentence();
             sentenceArray = book.sentenceArray;
-            TitleText.Text = book.title;
+            TitleText.Text = book.title + " (" + book.author + ")";
 
             readText[0] = ReadText0;
             readText[1] = ReadText1;
