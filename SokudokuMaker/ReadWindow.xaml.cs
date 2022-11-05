@@ -18,9 +18,14 @@ namespace SokudokuMaker
     // Window2
     public partial class ReadWindow : Page
     {
-        public ReadWindow()
+        Book book;
+        string[] sentenceArray;
+        public ReadWindow(Book book)
         {
             InitializeComponent();
+            this.book = book;
+            book.SplitAllSentence();
+            sentenceArray = book.sentenceArray;
         }
     }
 }

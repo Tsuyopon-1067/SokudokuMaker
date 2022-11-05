@@ -35,18 +35,19 @@ namespace SokudokuMaker
             }
         }
 
-
+        int idx = 0;
         private void ItemboxSelected(object sender, SelectionChangedEventArgs e)
         {
-            int idx = bookListBox.SelectedIndex;
+            idx = bookListBox.SelectedIndex;
             TitleTextBlock.Text = bookList[idx].title;
             SentenceTextBlock.Text = bookList[idx].sentence;
         }
 
         private void ClickButton(object sender, RoutedEventArgs e)
         {
-            var page2 = new ReadWindow();
-            NavigationService.Navigate(page2);
+            Book selectedBook = bookList[idx];
+            var readWindow = new ReadWindow(selectedBook);
+            NavigationService.Navigate(readWindow);
         }
     }
 }
