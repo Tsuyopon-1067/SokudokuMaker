@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1214"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="rbtn.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1216"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="-125.1579"
+     inkscape:cy="155.56349"
+     inkscape:window-width="1831"
+     inkscape:window-height="1057"
+     inkscape:window-x="81"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3023"
+     width="100mm" />
+  <defs
+     id="defs1211" />
+  <g
+     inkscape:label="maru"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:none">
+    <path
+       style="fill:#00d6ba;fill-opacity:1;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1655"
+       sodipodi:type="arc"
+       sodipodi:cx="49.999966"
+       sodipodi:cy="50"
+       sodipodi:rx="49.999966"
+       sodipodi:ry="49.999962"
+       sodipodi:start="1.5790971"
+       sodipodi:end="1.5790727"
+       sodipodi:arc-type="slice"
+       d="M 49.584932,99.998239 A 49.999966,49.999962 0 0 1 0.00172003,49.585271 49.999966,49.999962 0 0 1 50.414389,0.00175565 49.999966,49.999962 0 0 1 99.998216,50.414119 49.999966,49.999962 0 0 1 49.586152,99.998249 L 49.999966,50 Z" />
+    <rect
+       style="fill:#00d6ba;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       id="rect876"
+       width="50"
+       height="50"
+       x="26.251627"
+       y="26.871744"
+       ry="0.36491597" />
+  </g>
+  <g
+     inkscape:label="maru薄い"
+     inkscape:groupmode="layer"
+     id="g3023"
+     style="display:inline">
+    <path
+       style="fill:#00a38e;fill-opacity:1;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3019"
+       sodipodi:type="arc"
+       sodipodi:cx="49.999966"
+       sodipodi:cy="50"
+       sodipodi:rx="49.999966"
+       sodipodi:ry="49.999962"
+       sodipodi:start="1.5790971"
+       sodipodi:end="1.5790727"
+       sodipodi:arc-type="slice"
+       d="M 49.584932,99.998239 A 49.999966,49.999962 0 0 1 0.00172003,49.585271 49.999966,49.999962 0 0 1 50.414389,0.00175565 49.999966,49.999962 0 0 1 99.998216,50.414119 49.999966,49.999962 0 0 1 49.586152,99.998249 L 49.999966,50 Z" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="再生ボタン"
+     style="display:inline">
+    <path
+       id="rect1622"
+       style="fill:#f8fffe;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       d="M 34.699369,25.000001 78.000639,50 34.699369,75 Z"
+       sodipodi:nodetypes="cccc"
+       inkscape:transform-center-x="-8.4252226"
+       inkscape:transform-center-y="-0.74835465" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g3017"
+     inkscape:label="再生ボタン反転"
+     style="display:none">
+    <path
+       id="path3015"
+       style="fill:#f8fffe;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       d="m 65.912697,76.496709 -43.30127,-24.999999 43.30127,-25 z"
+       sodipodi:nodetypes="cccc"
+       inkscape:transform-center-x="8.4252224"
+       inkscape:transform-center-y="0.74835435" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="一時停止"
+     style="display:none">
+    <rect
+       style="fill:#f8fffe;fill-opacity:1;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       id="rect2855"
+       width="10"
+       height="50"
+       x="28"
+       y="25" />
+    <rect
+       style="fill:#f8fffe;fill-opacity:1;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       id="rect2855-3"
+       width="10"
+       height="50"
+       x="62"
+       y="25" />
+  </g>
+</svg>

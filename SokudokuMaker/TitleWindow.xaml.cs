@@ -15,6 +15,7 @@ namespace SokudokuMaker
             InitializeComponent();
             bookListBox.ItemsSource = bookList;
             ReadFiles();
+            bookListBox.SelectedIndex = 0; // 初期は一番上を選択状態にしておく
         }
 
         private void ReadFiles()
@@ -31,7 +32,7 @@ namespace SokudokuMaker
         {
             idx = bookListBox.SelectedIndex;
             TitleTextBlock.Text = bookList[idx].title;
-            SentenceTextBlock.Text = bookList[idx].sentence;
+            SentenceTextBlock.Text = bookList[idx].original;
         }
 
         private void ClickButton(object sender, RoutedEventArgs e)

@@ -11,19 +11,21 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.8*"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        <!-- タイトル一覧ListBox -->
         <ListBox Name="bookListBox" 
                  Grid.Row="1"
                  Grid.RowSpan="2" 
                  SelectionChanged="ItemboxSelected"
-                 >
+                 Padding="12" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="5">
@@ -33,21 +35,36 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <!-- 右画面 -->
+        <Border Grid.Row="0" 
+                Grid.Column="1"
+                Grid.RowSpan="3"
+                BorderBrush="Black"
+                BorderThickness="2,0,0,0" />
+        <!-- タイトル -->
         <TextBlock x:Name="TitleTextBlock"
                    Grid.Row="0" 
                    Grid.Column="1" 
-                   FontSize="24" FontWeight="Bold"/>
+                   FontSize="24" FontWeight="Bold"
+                   Padding="12"
+                   TextAlignment="Center" />
+        <!-- 本文 -->
         <TextBlock x:Name="SentenceTextBlock" 
                    Grid.Row="1" 
                    Grid.Column="1" 
                    TextWrapping="Wrap"  
-                    FontSize="14" FontWeight="Bold"/>
+                   FontSize="14" FontWeight="Bold"
+                   Padding="12" />
+        <Border Grid.Row="1" 
+                Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="0,0,0,2" />
+        <!-- ボタン -->
         <Button Grid.Row="2" 
                 Grid.Column="1"
                 Height="auto"
-                Margin="5,5,5,5" Click="ClickButton" Cursor="Hand">
+                Margin="12" Click="ClickButton" Cursor="Hand">
             <TextBlock Text="Start" FontSize="28" FontWeight="Bold"/>
         </Button>
-
     </Grid>
 </Page>

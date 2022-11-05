@@ -16,22 +16,18 @@ namespace SokudokuMaker
         public string[] sentenceArray { get; private set; }
         public string sentence { get; private set; }
         private const int previewWord = 300;
+        public string original { get; set; }
 
         public Book(string file)
         {
-            string[] _sentence = ReadFile(file);
+            sentenceArray = ReadFile(file);
 
-            if (_sentence.Length > 2)
+            if (sentence.Length > 2)
             {
-                title = _sentence[0];
-                author = _sentence[1];
-                title = title.TrimEnd();
-                author = author.TrimEnd();
-            }
-            // ファイル読み込み段階ではpreviewWord語以下に抑える
-            for (int i = 2; i < Math.Min(_sentence.Length, previewWord); i++)
-            {
-                _sentence[i - 2] = _sentence[i];
+                title = sentenceArray[0];
+                author = sentenceArray[1];
+                original = sentence.Replace("\n", "");
+                Debug.WriteLine(original);
             }
         }
 
@@ -40,6 +36,7 @@ namespace SokudokuMaker
             StreamReader sr = new StreamReader(file);
             sentence = sr.ReadToEnd();
             sr.Close();
+            sentence = sentence.Replace("\r\n", "\n"); // 全文の改行コードを変更しておく
             return sentence.Split('\n');
         }
         public void SplitAllSentence()
@@ -50,7 +47,7 @@ namespace SokudokuMaker
             sentenceArray[0] = "";
             for (int i = 2; i < sentenceArray.Length; i++)
             {
-                sentenceArray[i - 1] = sentenceArray[i].TrimEnd(); ;
+                sentenceArray[i - 1] = sentenceArray[i];
             }
             sentenceArray[sentenceArray.Length - 1] = "";
         }
