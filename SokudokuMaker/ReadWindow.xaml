@@ -10,6 +10,42 @@
       Title="ReadWindow">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
         <Label FontSize="50">Page2</Label>
+
+        <TextBlock x:Name="ReadText0"
+                   Grid.Row="1" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2"
+                   Text="aaa"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="24" FontWeight="Bold" Foreground="#FF464646"/>
+        <TextBlock x:Name="ReadText1"
+                   Grid.Row="2" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2"
+                   Text="aaa"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="ReadText2"
+                   Grid.Row="3" 
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2"
+                   Text="aaab"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="24" FontWeight="Bold" Foreground="#FF464646"/>
     </Grid>
 </Page>
