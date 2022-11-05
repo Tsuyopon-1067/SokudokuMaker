@@ -15,7 +15,7 @@
             <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#FFFFFFFF" />
             <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#23dfc3" />
             <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#FFFFFFFF" />
-            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#00d6ba" />
+            <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#00cbb0" />
             <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#FFFFFFFF" />
         </ResourceDictionary>
     </Application.Resources>

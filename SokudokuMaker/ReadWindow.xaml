@@ -20,13 +20,15 @@
         </Grid.ColumnDefinitions>
 
         <!-- タイトル -->
+        <Border Grid.Row="0" Grid.Column="0" Background="#00cbb0" />
         <TextBlock x:Name="TitleText"
                    Grid.Row="0" 
                    Grid.Column="0" 
                    Text="Title"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="24" FontWeight="Bold"/>
+                   FontSize="36" FontWeight="Bold"
+                   Foreground="White"/>
 
         <!-- テキスト表示領域 -->
         <UniformGrid Grid.Row="1" Rows="3" Margin="12">
