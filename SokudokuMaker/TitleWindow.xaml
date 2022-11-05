@@ -11,8 +11,8 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -20,6 +20,34 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label FontSize="50" Grid.Row="0">Page1</Label>
-        <Button Grid.Row="1" Click="Button_Click">ページ２へ遷移</Button>
+        <ListBox Name="bookListBox" 
+                 Grid.Row="1"
+                 Grid.RowSpan="2" 
+                 SelectionChanged="ItemboxSelected"
+                 >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="{Binding title}" FontSize="28" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding author}" FontSize="14" FontWeight="Bold"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock x:Name="TitleTextBlock"
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="SentenceTextBlock" 
+                   Grid.Row="1" 
+                   Grid.Column="1" 
+                   TextWrapping="Wrap"  
+                    FontSize="14" FontWeight="Bold"/>
+        <Button Grid.Row="2" 
+                Grid.Column="1"
+                Margin="5" Click="ClickButton">
+            <TextBlock Text="Start" FontSize="28" FontWeight="Bold"/>
+        </Button>
+
     </Grid>
 </Page>

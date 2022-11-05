@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace SokudokuMaker
 {
-    /// <summary>
-    /// ReadWindow.xaml の相互作用ロジック
-    /// </summary>
+    // Window2
     public partial class ReadWindow : Page
     {
         public ReadWindow()
