@@ -153,5 +153,11 @@ namespace SokudokuMaker
             int.TryParse(NowWordTextBox.Text, out nowWord);
             RenewNowWord();
         }
+
+        private void ClickBackButton(object sender, RoutedEventArgs e)
+        {
+            var titleWindow = new TitleWindow();
+            NavigationService.Navigate(titleWindow);
+        }
     }
 }

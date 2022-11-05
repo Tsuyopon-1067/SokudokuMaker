@@ -20,8 +20,13 @@
         </Grid.ColumnDefinitions>
 
         <!-- タイトル -->
-        <Border Grid.Row="0" Grid.Column="0" Background="#00cbb0" />
-        <TextBlock x:Name="TitleText"
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#00cbb0">
+            <Button HorizontalAlignment="Left" Height="auto"
+                Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickBackButton" Cursor="Hand">
+                <Image Source="/modoru.png" />
+            </Button>
+
+            <TextBlock x:Name="TitleText"
                    Grid.Row="0" 
                    Grid.Column="0" 
                    Text="Title"
@@ -29,6 +34,8 @@
                    VerticalAlignment="Center"
                    FontSize="36" FontWeight="Bold"
                    Foreground="White"/>
+        </StackPanel>
+
 
         <!-- テキスト表示領域 -->
         <UniformGrid Grid.Row="1" Rows="3" Margin="12">

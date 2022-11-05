@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <None Remove="lBtn.png" />
+    <None Remove="modoru.png" />
     <None Remove="poseBtn.png" />
     <None Remove="rBtn.png" />
   </ItemGroup>
@@ -26,6 +27,7 @@
 
   <ItemGroup>
     <Resource Include="lBtn.png" />
+    <Resource Include="modoru.png" />
     <Resource Include="poseBtn.png" />
     <Resource Include="rBtn.png" />
   </ItemGroup>

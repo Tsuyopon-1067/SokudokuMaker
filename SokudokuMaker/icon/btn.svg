@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1214"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   sodipodi:docname="rbtn.svg"
+   sodipodi:docname="btn.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@
      inkscape:label="maru薄い"
      inkscape:groupmode="layer"
      id="g3023"
-     style="display:inline">
+     style="display:none">
     <path
        style="fill:#00a38e;fill-opacity:1;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3019"
@@ -83,7 +83,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="再生ボタン"
-     style="display:inline">
+     style="display:none">
     <path
        id="rect1622"
        style="fill:#f8fffe;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
@@ -124,5 +124,23 @@
        height="50"
        x="62"
        y="25" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="最初に戻る">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       id="rect875"
+       width="42.047649"
+       height="27.080532"
+       x="43.803314"
+       y="36.459732"
+       ry="0.23793021" />
+    <path
+       id="rect1141"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#fffffe;stroke-width:0;stroke-linejoin:round"
+       d="m 44.352829,74.946997 c -0.08495,0.07067 -0.221704,0.07067 -0.306645,0 L 14.212744,50.127554 c -0.08494,-0.07067 -0.08494,-0.184443 0,-0.255108 l 29.83344,-24.819443 c 0.08494,-0.07067 0.221706,-0.07067 0.306645,0 z"
+       sodipodi:nodetypes="csssscc" />
   </g>
 </svg>
