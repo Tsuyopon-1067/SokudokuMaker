@@ -144,13 +144,13 @@ namespace SokudokuMaker
 
         private void WpmTextBoxChanged(object sender, TextChangedEventArgs e)
         {
-            if (!int.TryParse(WpmTextBox.Text, out wpm)) ;
+            int.TryParse(WpmTextBox.Text, out wpm);
             RenewWpm();
         }
 
         private void NowWordTextBoxChanged(object sender, TextChangedEventArgs e)
         {
-            if (!int.TryParse(NowWordTextBox.Text, out nowWord)) ;
+            int.TryParse(NowWordTextBox.Text, out nowWord);
             RenewNowWord();
         }
     }
