@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:SokudokuMaker"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="LawnGreen"
+      Background="#ffffff"
       Title="ReadWindow">
 
     <Grid>
@@ -29,25 +29,25 @@
                    FontSize="24" FontWeight="Bold"/>
 
         <!-- テキスト表示領域 -->
-        <UniformGrid Grid.Row="1" Rows="3" Margin="5">
+        <UniformGrid Grid.Row="1" Rows="3" Margin="12">
             <TextBlock x:Name="ReadText0"
                    Grid.Row="1" 
                    Grid.Column="0" 
-                   Text="aaa"
+                   Text="寒い冬が"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
             <TextBlock x:Name="ReadText1"
                    Grid.Row="2" 
                    Grid.Column="0" 
-                   Text="aaa"
+                   Text="寒い冬が"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="48" FontWeight="Bold"/>
             <TextBlock x:Name="ReadText2"
                    Grid.Row="3" 
                    Grid.Column="0" 
-                   Text="aaab"
+                   Text="寒い冬が"
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
@@ -57,25 +57,61 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="0.3*" />
                 <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="0.3*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <!-- Start Stop -->
             <Button Grid.Row="4"
                 Grid.Column="0"
                 Height="auto"
-                Margin="5,5,5,5" Cursor="Hand">
+                Margin="5,5,5,5"
+                Click="ClickStartButton">
                 <TextBlock Text="Start" FontSize="28" FontWeight="Bold"/>
             </Button>
-            <UniformGrid  Grid.Column="2" Rows="2">
-                <Slider x:Name="wordSlider" VerticalAlignment="Center" />
-                <Slider x:Name="speedSlider" VerticalAlignment="Center" />
+
+            <!-- スライダー左ボタン -->
+            <UniformGrid  Grid.Column="1" Rows="2" Margin="5">
+                <Button  VerticalAlignment="Center" Click="ClickNowWordDown" />
+                <Button  VerticalAlignment="Center" Click="ClickWpmDown" />
             </UniformGrid>
-            <UniformGrid  Grid.Column="4" Rows="2">
-                <TextBlock Text="111" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                <TextBlock Text="111" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <!-- スライダー右ボタン -->
+            <UniformGrid  Grid.Column="3" Rows="2" Margin="5">
+                <Button  VerticalAlignment="Center" Click="ClickNowWordUp" />
+                <Button  VerticalAlignment="Center" Click="ClickWpmUp" />
+            </UniformGrid>
+
+            <!-- スライダー -->
+            <UniformGrid  Grid.Column="2" Rows="2" Margin="8">
+                <Slider x:Name="NowWordSlider" VerticalAlignment="Center"
+                        LargeChange="10"
+                        SmallChange="1" 
+                        Maximum="1000"
+                        Minimum="1" 
+                        ValueChanged="NowWordSliderChanged" />
+                <Slider x:Name="WpmSlider" VerticalAlignment="Center"
+                        LargeChange="10"
+                        SmallChange="1"
+                        Maximum="1000"
+                        Minimum="1" 
+                        Value="120"
+                        ValueChanged="WpmSliderChanged" />
+            </UniformGrid>
+
+            
+            <!-- スライダーの値 -->
+            <UniformGrid  Grid.Column="4" Rows="2" Margin="8">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="現在" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBox x:Name="NowWordTextBox" Text="1" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" />
+                    <TextBlock Text="語目" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="WPM:" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBox x:Name="WpmTextBox" Text="120" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" />
+                </StackPanel>
             </UniformGrid>
         </Grid>
     </Grid>

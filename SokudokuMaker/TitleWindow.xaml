@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:SokudokuMaker"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="LightCoral"
+      Background="#ffffff"
       Title="TitleWindow">
 
     <Grid>
@@ -19,7 +19,6 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label FontSize="50" Grid.Row="0">Page1</Label>
         <ListBox Name="bookListBox" 
                  Grid.Row="1"
                  Grid.RowSpan="2" 

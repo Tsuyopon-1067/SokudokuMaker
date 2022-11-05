@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace SokudokuMaker
 {
-    internal class Book
+    public class Book
     {
         public string title { get; }
         public string author { get; }
@@ -42,14 +42,17 @@ namespace SokudokuMaker
             sr.Close();
             return sentence.Split('\n');
         }
-        private void SplitAllSentence()
+        public void SplitAllSentence()
         {
             sentenceArray = sentence.Split('\n');
-            // 選択された後は全単語分割する
+            // 選択された後は全単語分割する 0・1はタイトル・作者なので無視
+            // [0]は空にしたいので[1]から順に代入
+            sentenceArray[0] = "";
             for (int i = 2; i < sentenceArray.Length; i++)
             {
-                sentenceArray[i - 2] = sentenceArray[i];
+                sentenceArray[i - 1] = sentenceArray[i].TrimEnd(); ;
             }
+            sentenceArray[sentenceArray.Length - 1] = "";
         }
 
     }
