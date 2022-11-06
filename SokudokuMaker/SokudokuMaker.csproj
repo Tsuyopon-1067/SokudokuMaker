@@ -5,6 +5,8 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <DebugType>none</DebugType>
+    <ApplicationIcon>icon\ico1.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +21,10 @@
     <None Remove="modoru.png" />
     <None Remove="poseBtn.png" />
     <None Remove="rBtn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon\ico1.ico" />
   </ItemGroup>
 
   <ItemGroup>
