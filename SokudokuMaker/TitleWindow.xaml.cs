@@ -32,7 +32,7 @@ namespace SokudokuMaker
         {
             idx = bookListBox.SelectedIndex;
             TitleTextBlock.Text = bookList[idx].title;
-            SentenceTextBlock.Text = bookList[idx].original;
+            SentenceTextBlock.Text = bookList[idx].previewSentence;
         }
 
         private void ClickButton(object sender, RoutedEventArgs e)

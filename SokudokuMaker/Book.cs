@@ -15,8 +15,8 @@ namespace SokudokuMaker
         public string author { get; }
         public string[] sentenceArray { get; private set; }
         public string sentence { get; private set; }
-        private const int previewWord = 300;
-        public string original { get; set; }
+        public string previewSentence { get; set; }
+        private int previewWord = 200;
 
         public Book(string file)
         {
@@ -26,8 +26,14 @@ namespace SokudokuMaker
             {
                 title = sentenceArray[0];
                 author = sentenceArray[1];
-                original = sentence.Replace("\n", "");
-                Debug.WriteLine(original);
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 2; i < Math.Min(sentenceArray.Length, previewWord); i++)
+                {
+                    sb.Append(sentenceArray[i]);
+                }
+                previewSentence = sb.ToString();
+                previewSentence = previewSentence.Replace("\n", "");
             }
         }
 
