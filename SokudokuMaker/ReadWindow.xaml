@@ -20,14 +20,14 @@
               materialDesign:ElevationAssist.Elevation="Dp4"
               DockPanel.Dock="Top">
                 <Grid>
-                    <Button HorizontalAlignment="Left"
-                    Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickBackButton" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="ArrowLeftThick" Foreground="White" Height="32" Width="32" />
-                    </Button>
                     <TextBlock x:Name="TitleText"
                         VerticalAlignment="Center" HorizontalAlignment="Center"
                            Margin="16 0 0 0"
                            Text="SokudokuMaker" FontSize="24" FontWeight="Bold" />
+                    <Button HorizontalAlignment="Left"
+                    Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickBackButton" Cursor="Hand">
+                        <materialDesign:PackIcon Kind="ArrowLeftThick" Foreground="White" Height="32" Width="32" />
+                    </Button>
                 </Grid>
             </materialDesign:ColorZone>
             <Grid>
