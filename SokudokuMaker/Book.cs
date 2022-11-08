@@ -57,6 +57,9 @@ namespace SokudokuMaker
             }
             sentenceArray[sentenceArray.Length - 1] = "";
         }
-
+        public String ToString()
+        {
+            return title;
+        }
     }
 }
