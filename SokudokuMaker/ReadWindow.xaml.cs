@@ -62,11 +62,19 @@ namespace SokudokuMaker
                 if (NowWordSlider != null) NowWordSlider.Value = nowWord;
                 if (sentenceArray != null)
                 {
-                    if (nowWord >= sentenceArray.Length - 1) nowWord = sentenceArray.Length - 2;
+                    if (nowWord >= sentenceArray.Length - 1)
+                    {
+                        nowWord = sentenceArray.Length - 2;
+                        if (isStart)
+                        {
+                            ClickStartButton(null, null);
+                            nowWord = 1;
+                        }
+                    }
                     else if (nowWord < 1) nowWord = 1;
                 }
             });
-            
+
             SetReadText();
         }
         private void RenewWpm()

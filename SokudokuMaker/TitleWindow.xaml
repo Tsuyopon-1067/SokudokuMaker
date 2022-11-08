@@ -14,7 +14,7 @@
         <!-- タイトル -->
         <DockPanel LastChildFill="True">
             <materialDesign:ColorZone
-              Mode="PrimaryLight"
+              Mode="PrimaryMid"
               Padding="12"
               materialDesign:ElevationAssist.Elevation="Dp4"
               DockPanel.Dock="Top">
@@ -37,7 +37,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.8*"/>
                     <RowDefinition Height="4*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="75"/>
                 </Grid.RowDefinitions>
 
                 <!-- タイトル一覧ListBox -->
@@ -83,7 +83,10 @@
                 <Button Grid.Row="2" 
                 Grid.Column="1"
                 Height="auto"
-                Margin="12" Click="ClickButton" Cursor="Hand">
+                Margin="12" 
+                Click="ClickButton" 
+                Cursor="Hand"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}">
                     <TextBlock Text="Start" FontSize="28" FontWeight="Bold"/>
                 </Button>
             </Grid>

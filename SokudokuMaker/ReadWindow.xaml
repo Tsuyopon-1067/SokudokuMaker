@@ -15,7 +15,7 @@
         <!-- タイトル -->
         <DockPanel LastChildFill="True">
             <materialDesign:ColorZone
-              Mode="PrimaryLight"
+              Mode="PrimaryMid"
               Padding="12"
               materialDesign:ElevationAssist.Elevation="Dp4"
               DockPanel.Dock="Top">
