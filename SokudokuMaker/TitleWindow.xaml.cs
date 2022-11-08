@@ -2,7 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
-using System.Diagnostics;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace SokudokuMaker
 {
@@ -40,6 +43,15 @@ namespace SokudokuMaker
             Book selectedBook = bookList[idx];
             var readWindow = new ReadWindow(selectedBook);
             NavigationService.Navigate(readWindow);
+        }
+        private void ClickFileButton(object sender, RoutedEventArgs e)
+        {
+            var dlg = new CommonOpenFileDialog();
+            dlg.IsFolderPicker = true;
+            if (dlg.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                var folder = dlg.FileName;
+            }
         }
     }
 }

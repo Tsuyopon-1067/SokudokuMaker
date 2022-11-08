@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="SokudokuMaker" Height="450" Width="800">
     <Grid>
+        <Frame Name="frame" NavigationUIVisibility="Hidden" Background="#FFF" />
         <Image Name="image"/>
-        <Frame Name="frame" NavigationUIVisibility="Hidden" Background="#FFF" Navigating="Frame_Navigating"/>
     </Grid>
 </Window>
