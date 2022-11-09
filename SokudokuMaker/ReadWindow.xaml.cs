@@ -18,6 +18,7 @@ namespace SokudokuMaker
         private Timer timer;
         public ReadWindow(Book book)
         {
+            int wpmTmp = Properties.Settings.Default.wpm; // ここで仮置きしないとInitializeで変更されてしまう
             InitializeComponent();
 
             this.book = book;
@@ -29,6 +30,7 @@ namespace SokudokuMaker
             readText[1] = ReadText1;
             readText[2] = ReadText2;
             SetReadText();
+            wpm = wpmTmp;
             RenewWpm();
 
             NowWordSlider.Maximum = sentenceArray.Length-1;
@@ -121,17 +123,17 @@ namespace SokudokuMaker
             ++nowWord;
             RenewNowWord();
         }
+        private void ClickWpmUp(object sender, RoutedEventArgs e)
+        {
+            ++wpm;
+            RenewWpm();
+        }
         void Tick(object sender, ElapsedEventArgs e)
         {
             ++nowWord;
             RenewNowWord();
         }
 
-        private void ClickWpmUp(object sender, RoutedEventArgs e)
-        {
-            ++wpm;
-            RenewWpm();
-        }
 
         private void NowWordSliderChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
