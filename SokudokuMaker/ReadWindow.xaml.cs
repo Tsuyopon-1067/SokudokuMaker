@@ -132,7 +132,7 @@ namespace SokudokuMaker
 
         private void ClickWpmDown(object sender, RoutedEventArgs e)
         {
-            --wpm;
+            wpm -= 5;
             RenewWpm();
         }
 
@@ -143,7 +143,7 @@ namespace SokudokuMaker
         }
         private void ClickWpmUp(object sender, RoutedEventArgs e)
         {
-            ++wpm;
+            wpm += 5;
             RenewWpm();
         }
         void Tick(object sender, ElapsedEventArgs e)
