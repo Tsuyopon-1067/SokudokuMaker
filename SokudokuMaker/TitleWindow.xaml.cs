@@ -23,13 +23,13 @@ namespace SokudokuMaker
         {
             InitializeComponent();
             bookListBox.ItemsSource = bookList;
-            ReadFiles("books");
+            ReadFiles(Properties.Settings.Default.bookFolderPath);
             bookListBox.SelectedIndex = 0; // 初期は一番上を選択状態にしておく
         }
 
-        private void ReadFiles(String booksPath)
+        private void ReadFiles(String bookFolderPath)
         {
-            string[] files = System.IO.Directory.GetFiles(booksPath, "*.txt", System.IO.SearchOption.AllDirectories);
+            string[] files = System.IO.Directory.GetFiles(bookFolderPath, "*.txt", System.IO.SearchOption.AllDirectories);
             foreach (string file in files)
             {
                 bookList.Add(new Book(file));

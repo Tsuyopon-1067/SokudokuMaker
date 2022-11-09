@@ -19,12 +19,10 @@
               materialDesign:ElevationAssist.Elevation="Dp4"
               DockPanel.Dock="Top">
                 <Grid>
-                    <!--
                     <Button HorizontalAlignment="Left"
                     Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickFileButton" Cursor="Hand" Height="32" VerticalAlignment="Top">
-                        <materialDesign:PackIcon Kind="FolderOutline" Foreground="#00000000" Height="28" Width="28" />
+                        <materialDesign:PackIcon Kind="FolderOutline" Foreground="White" Height="28" Width="28" />
                     </Button>
-                    -->
                     <TextBlock
                         VerticalAlignment="Center" HorizontalAlignment="Center"
                            Margin="16 0 0 0"
