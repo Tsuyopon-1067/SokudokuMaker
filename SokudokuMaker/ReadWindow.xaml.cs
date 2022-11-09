@@ -95,18 +95,21 @@ namespace SokudokuMaker
             if (WpmTextBox != null) WpmTextBox.Text = wpm.ToString();
             if (WpmSlider != null) WpmSlider.Value = wpm;
             Properties.Settings.Default.wpm = wpm;
-            StartStopTimer();
+            
+            if (timer != null)
+            {
+                timerSpeed = (int)(60000 / wpm);
+                timer.Interval = timerSpeed;
+            }
         }
 
         // 速度が変更されたら呼び出される
         // 表示行の更新を開始したり停止したり
         private void StartStopTimer()
         {
-            timerSpeed = (int)(60000 / wpm);
 
             if (timer != null)
             {
-                timer.Interval = timerSpeed;
                 // フラグによって開始・停止を制御
                 if (isStart)
                 {
