@@ -19,8 +19,11 @@ namespace SokudokuMaker
         //List<Book> bookList = new List<Book>();
         ObservableCollection<Book> bookList = new ObservableCollection<Book>();
 
-        public TitleWindow()
-        {
+        public TitleWindow() {
+            // ナビゲーションを削除してメモリ消費を抑える
+            //var nav = this.NavigationService;
+            //while (nav.CanGoBack) nav.RemoveBackEntry();
+
             InitializeComponent();
             bookListBox.ItemsSource = bookList;
             String bookFolderPath = Properties.Settings.Default.bookFolderPath;
