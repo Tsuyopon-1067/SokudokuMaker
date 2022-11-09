@@ -30,7 +30,7 @@ namespace SokudokuMaker
             ReadFiles(bookFolderPath);
             bookListBox.SelectedIndex = 0; // 初期は一番上を選択状態にしておく
         }
-
+        // 指定パスのフォルダ内のテキストファイル名を取得したらBookインスタンス化して配列に入れる
         private void ReadFiles(String bookFolderPath)
         {
             string[] files = System.IO.Directory.GetFiles(bookFolderPath, "*.txt", System.IO.SearchOption.AllDirectories);
@@ -42,20 +42,23 @@ namespace SokudokuMaker
 
         int idx = 0;
 
-        private void ItemboxSelected(object sender, SelectionChangedEventArgs e)
+        // ItemBoxの要素が選択されたら選択された要素のインデックスを取得してタイトル・本文を表示する
+        private void ListboxSelected(object sender, SelectionChangedEventArgs e)
         {
             idx = bookListBox.SelectedIndex;
             TitleTextBlock.Text = bookList[idx].title;
             SentenceTextBlock.Text = bookList[idx].previewSentence;
         }
 
+        // ItemBoxの要素が選択されたら選択された要素のインデックスを取得してタイトル・本文を表示する
         private void ClickButton(object sender, RoutedEventArgs e)
         {
             Book selectedBook = bookList[idx];
             var readWindow = new ReadWindow(selectedBook);
             NavigationService.Navigate(readWindow);
         }
-        private void ClickFileButton(object sender, RoutedEventArgs e)
+        // フォルダ選択ボタンが押されたら呼び出される
+        private void ClickFolderButton(object sender, RoutedEventArgs e)
         {
             var dlg = new CommonOpenFileDialog();
             dlg.IsFolderPicker = true;

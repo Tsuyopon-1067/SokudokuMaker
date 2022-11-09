@@ -20,7 +20,7 @@
               DockPanel.Dock="Top">
                 <Grid>
                     <Button HorizontalAlignment="Left"
-                    Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickFileButton" Cursor="Hand" Height="32" VerticalAlignment="Top">
+                    Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickFolderButton" Cursor="Hand" Height="32" VerticalAlignment="Top">
                         <materialDesign:PackIcon Kind="FolderOutline" Foreground="White" Height="28" Width="28" />
                     </Button>
                     <TextBlock
@@ -44,7 +44,7 @@
                 <ListBox Name="bookListBox" 
                  Grid.Row="0"
                  Grid.RowSpan="3" 
-                 SelectionChanged="ItemboxSelected"
+                 SelectionChanged="ListboxSelected"
                  Style="{StaticResource MaterialDesignCardsListBox}"
                  Margin="15" >
                     <ListBox.ItemTemplate>
