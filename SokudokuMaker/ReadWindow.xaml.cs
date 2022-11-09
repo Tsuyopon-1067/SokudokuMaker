@@ -16,6 +16,8 @@ namespace SokudokuMaker
         private int timerSpeed = 100;
         private bool isStart = false; // タイマー稼働中はtrue
         private Timer timer;
+
+        // book:選択された本
         public ReadWindow(Book book)
         {
             int wpmTmp = Properties.Settings.Default.wpm; // ここで仮置きしないとInitializeで変更されてしまう
@@ -26,11 +28,13 @@ namespace SokudokuMaker
             sentenceArray = book.sentenceArray;
             TitleText.Text = book.title + " (" + book.author + ")";
 
+            // 処理しやすくするために表示領域のTextBlock3行を配列化する
             readText[0] = ReadText0;
             readText[1] = ReadText1;
             readText[2] = ReadText2;
             SetReadText();
-            wpm = wpmTmp;
+
+            wpm = wpmTmp; // 退避させていた値を戻す
             RenewWpm();
 
             NowWordSlider.Maximum = sentenceArray.Length-1;
@@ -40,6 +44,7 @@ namespace SokudokuMaker
             StartStopTimer();
         }
 
+        // 本文表示領域の更新 真ん中がword番目の行になる
         // sentenceArrayは1スタート
         private void SetReadText()
         {
@@ -57,6 +62,9 @@ namespace SokudokuMaker
                 }
             });
         }
+
+        // 今何行目かの表示が変更されたら呼び出される
+        // スライダーの更新・ボタン操作・テキストボックス入力のどれか
         private void RenewNowWord()
         {
             this.Dispatcher.Invoke(() => {
@@ -79,6 +87,9 @@ namespace SokudokuMaker
 
             SetReadText();
         }
+
+        // 速度が変更されたら呼び出される
+        // スライダーの更新・ボタン操作・テキストボックス入力のどれか
         private void RenewWpm()
         {
             if (WpmTextBox != null) WpmTextBox.Text = wpm.ToString();
@@ -86,6 +97,9 @@ namespace SokudokuMaker
             Properties.Settings.Default.wpm = wpm;
             StartStopTimer();
         }
+
+        // 速度が変更されたら呼び出される
+        // 表示行の更新を開始したり停止したり
         private void StartStopTimer()
         {
             timerSpeed = (int)(60000 / wpm);
@@ -93,6 +107,7 @@ namespace SokudokuMaker
             if (timer != null)
             {
                 timer.Interval = timerSpeed;
+                // フラグによって開始・停止を制御
                 if (isStart)
                 {
                     timer.Start();
