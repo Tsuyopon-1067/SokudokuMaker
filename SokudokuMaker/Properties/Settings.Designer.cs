@@ -34,5 +34,17 @@ namespace SokudokuMaker.Properties {
                 this["bookFolderPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public int wpm {
+            get {
+                return ((int)(this["wpm"]));
+            }
+            set {
+                this["wpm"] = value;
+            }
+        }
     }
 }

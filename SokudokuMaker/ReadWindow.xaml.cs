@@ -12,7 +12,7 @@ namespace SokudokuMaker
         private string[] sentenceArray;
         private TextBlock[] readText = new TextBlock[3];
         private int nowWord = 1;
-        private int wpm = 300;
+        private int wpm = Properties.Settings.Default.wpm;
         private int timerSpeed = 100;
         private bool isStart = false; // タイマー稼働中はtrue
         private Timer timer;
@@ -81,6 +81,7 @@ namespace SokudokuMaker
         {
             if (WpmTextBox != null) WpmTextBox.Text = wpm.ToString();
             if (WpmSlider != null) WpmSlider.Value = wpm;
+            Properties.Settings.Default.wpm = wpm;
             StartStopTimer();
         }
         private void StartStopTimer()
