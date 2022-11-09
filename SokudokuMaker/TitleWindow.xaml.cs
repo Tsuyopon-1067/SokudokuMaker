@@ -23,7 +23,8 @@ namespace SokudokuMaker
         {
             InitializeComponent();
             bookListBox.ItemsSource = bookList;
-            ReadFiles(Properties.Settings.Default.bookFolderPath);
+            String bookFolderPath = Properties.Settings.Default.bookFolderPath;
+            ReadFiles(bookFolderPath);
             bookListBox.SelectedIndex = 0; // 初期は一番上を選択状態にしておく
         }
 
@@ -34,7 +35,6 @@ namespace SokudokuMaker
             {
                 bookList.Add(new Book(file));
             }
-            bookListBox.InvalidateArrange();
         }
 
         int idx = 0;
@@ -61,6 +61,9 @@ namespace SokudokuMaker
             {
                 bookList = new ObservableCollection<Book>();
                 ReadFiles(dlg.FileName);
+                Properties.Settings.Default.bookFolderPath = dlg.FileName;
+                var titleWindow = new TitleWindow();
+                NavigationService.Navigate(titleWindow);
             }
         }
     }

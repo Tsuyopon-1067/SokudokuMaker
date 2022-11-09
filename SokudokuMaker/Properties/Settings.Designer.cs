@@ -25,7 +25,7 @@ namespace SokudokuMaker.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"books\"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("books")]
         public string bookFolderPath {
             get {
                 return ((string)(this["bookFolderPath"]));
