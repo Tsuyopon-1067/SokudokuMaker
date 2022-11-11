@@ -16,7 +16,7 @@ namespace SokudokuMaker
         public string[] sentenceArray { get; private set; }
         public string sentence { get; private set; }
         public string previewSentence { get; set; }
-        private int previewWord = 200;
+        private int previewWord = 500;
 
         public Book(string file)
         {
