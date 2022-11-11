@@ -188,5 +188,10 @@ namespace SokudokuMaker
             var titleWindow = new TitleWindow();
             NavigationService.Navigate(titleWindow);
         }
+
+        private void ClickSettingsButton(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
