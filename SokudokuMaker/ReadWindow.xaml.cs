@@ -110,6 +110,9 @@ namespace SokudokuMaker
 
             if (timer != null)
             {
+                timerSpeed = (int)(60000 / wpm);
+                timer.Interval = timerSpeed;
+
                 // フラグによって開始・停止を制御
                 if (isStart)
                 {

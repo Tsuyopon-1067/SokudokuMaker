@@ -10,158 +10,184 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="ReadWindow">
 
-
-    <Grid>
-        <!-- タイトル -->
-        <DockPanel LastChildFill="True">
-            <materialDesign:ColorZone
-              Mode="PrimaryMid"
-              Padding="0"
-              materialDesign:ElevationAssist.Elevation="Dp4"
-              DockPanel.Dock="Top">
-                <Grid Margin="0">
-                    <TextBlock x:Name="TitleText"
-                        VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Margin="0 12 0 12"
-                           Text="SokudokuMaker" FontSize="24" FontWeight="Bold" />
-                    <Button HorizontalAlignment="left" Padding="0" Margin="12"
-                    Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickBackButton" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="ArrowLeftThick" Foreground="White" Height="32" Width="32" />
+    <!--
+    <materialDesign:DrawerHost IsRightDrawerOpen="{Binding ElementName=SettingsButton, Path=IsChecked}">
+        <!- 設定ボタンをクリックしたら右からスライドしてくるメニュー 
+        <materialDesign:DrawerHost.RightDrawerContent >
+            <DockPanel MinWidth="220">
+                <StackPanel Margin="16,4">
+                    <Button Name="btnAccount"
+                            Width="200"
+                            Height="50"
+                            Margin="0,4"
+                            Style="{StaticResource MaterialDesignFlatButton}">
+                        <DockPanel Width="200">
+                            <materialDesign:PackIcon Kind="Account" />
+                            <TextBlock Margin="10,0" Text="Account" />
+                        </DockPanel>
                     </Button>
-                    <Button HorizontalAlignment="Right" Padding="0" Margin="12"
-                    Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickSettingsButton" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="CogOutline" Foreground="White" Height="32" Width="32" />
-                    </Button>
-                </Grid>
-            </materialDesign:ColorZone>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="1.5*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <!-- テキスト表示領域 -->
-                <UniformGrid Grid.Row="0" Rows="3" Margin="12">
-                    <TextBlock x:Name="ReadText0"
-                       Grid.Row="1" 
-                       Grid.Column="0" 
-                       Text="寒い冬が"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
-                    <TextBlock x:Name="ReadText1"
-                       Grid.Row="2" 
-                       Grid.Column="0" 
-                       Text="寒い冬が"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="48" FontWeight="Bold"/>
-                    <TextBlock x:Name="ReadText2"
-                       Grid.Row="3" 
-                       Grid.Column="0" 
-                       Text="寒い冬が"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
-                </UniformGrid>
-
-                <!-- ボタン等インターフェース -->
-                <Border Grid.Row="1" 
-                    Grid.Column="0"
-                    BorderBrush="Black"
-                    BorderThickness="0,2,0,0" />
-                <Grid Grid.Row="2">
+                </StackPanel>
+            </DockPanel>
+        </materialDesign:DrawerHost.RightDrawerContent >
+    -->
+        <Grid>
+            <!-- タイトル -->
+            <DockPanel LastChildFill="True">
+                <materialDesign:ColorZone Mode="PrimaryMid"
+                                          Padding="0"
+                                          materialDesign:ElevationAssist.Elevation="Dp4"
+                                          DockPanel.Dock="Top">
+                    <Grid Margin="0">
+                        <TextBlock x:Name="TitleText"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   Margin="0 12 0 12"
+                                   Text="SokudokuMaker" FontSize="24" FontWeight="Bold" />
+                        <Button HorizontalAlignment="left" Padding="0" Margin="12"
+                                Background="#00000000" BorderBrush="#00000000" Foreground="#00000000" Click="ClickBackButton" Cursor="Hand">
+                            <materialDesign:PackIcon Kind="ArrowLeftThick" Foreground="White" Height="32" Width="32" />
+                        </Button>
+                        <!--
+                        <ToggleButton x:Name="SettingsButton" HorizontalAlignment="Right" Padding="0" Margin="12"
+                                      Style="{StaticResource MaterialDesignActionToggleButton}"
+                                      ToolTip="MaterialDesignActionToggleButton"
+                                      materialDesign:ToggleButtonAssist.OnContent="{materialDesign:PackIcon Kind=Close}"
+                                      materialDesign:ElevationAssist.Elevation="Dp0" Cursor="Hand">
+                            <materialDesign:PackIcon Kind="CogOutline" Foreground="White" Height="32" Width="32" />
+                        </ToggleButton>
+                        -->
+                    </Grid>
+                </materialDesign:ColorZone>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1.5*"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="0.3*" />
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="0.3*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- Start Stop -->
-                    <Viewbox Stretch="uniform" Margin="15">
-                        <Button Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    <!-- テキスト表示領域 -->
+                    <UniformGrid Grid.Row="0" Rows="3" Margin="12">
+                        <TextBlock x:Name="ReadText0"
+                                   Grid.Row="1" 
+                                   Grid.Column="0" 
+                                   Text="寒い冬が"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="30" FontWeight="Bold" Foreground="#FF464646"/>
+                        <TextBlock x:Name="ReadText1"
+                                   Grid.Row="2" 
+                                   Grid.Column="0" 
+                                   Text="寒い冬が"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="48" FontWeight="Bold"/>
+                        <TextBlock x:Name="ReadText2"
+                                   Grid.Row="3" 
+                                   Grid.Column="0" 
+                                   Text="寒い冬が"
+                                   TextAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="30" FontWeight="Bold" Foreground="#FF464646"/> 
+                    </UniformGrid>
+
+                    <!-- ボタン等インターフェース -->
+                    <Border Grid.Row="1" 
+                            Grid.Column="0"
+                            BorderBrush="Black"
+                            BorderThickness="0,2,0,0" />
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Start Stop -->
+                        <Viewbox Stretch="uniform" Margin="15">
+                            <Button Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
                         Click="ClickStartButton">
-                            <Viewbox Stretch="uniform" Margin="6">
-                                <Image x:Name="StartStopIconImage" Source="/rBtn.png" />
+                                <Viewbox Stretch="uniform" Margin="6">
+                                    <Image x:Name="StartStopIconImage" Source="/rBtn.png" />
+                                </Viewbox>
+                            </Button>
+
+                        </Viewbox>
+
+                        <!-- スライダー左ボタン -->
+                        <UniformGrid  Grid.Column="1" Rows="2" Margin="5">
+                            <Viewbox Stretch="uniform" Margin="7">
+                                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickNowWordDown">
+                                    <Viewbox Stretch="uniform" Margin="5">
+                                        <Image Source="/lBtn.png" />
+                                    </Viewbox>
+                                </Button>
                             </Viewbox>
-                        </Button>
+                            <Viewbox Stretch="uniform" Margin="7">
+                                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickWpmDown">
+                                    <Viewbox Stretch="uniform" Margin="5">
+                                        <Image Source="/lBtn.png" />
+                                    </Viewbox>
+                                </Button>
+                            </Viewbox>
+                        </UniformGrid>
+                        <!-- スライダー右ボタン -->
+                        <UniformGrid  Grid.Column="3" Rows="2" Margin="5">
+                            <Viewbox Stretch="uniform" Margin="7">
+                                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickNowWordUp">
+                                    <Viewbox Stretch="uniform" Margin="5">
+                                        <Image Source="/rBtn.png" />
+                                    </Viewbox>
+                                </Button>
+                            </Viewbox>
+                            <Viewbox Stretch="uniform" Margin="7">
+                                <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickWpmUp">
+                                    <Viewbox Stretch="uniform" Margin="5">
+                                        <Image Source="/rBtn.png" />
+                                    </Viewbox>
+                                </Button>
+                            </Viewbox>
+                        </UniformGrid>
 
-                    </Viewbox>
-
-                    <!-- スライダー左ボタン -->
-                    <UniformGrid  Grid.Column="1" Rows="2" Margin="5">
-                        <Viewbox Stretch="uniform" Margin="7">
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickNowWordDown">
-                                <Viewbox Stretch="uniform" Margin="5">
-                                    <Image Source="/lBtn.png" />
-                                </Viewbox>
-                            </Button>
-                        </Viewbox>
-                        <Viewbox Stretch="uniform" Margin="7">
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickWpmDown">
-                                <Viewbox Stretch="uniform" Margin="5">
-                                    <Image Source="/lBtn.png" />
-                                </Viewbox>
-                            </Button>
-                        </Viewbox>
-                    </UniformGrid>
-                    <!-- スライダー右ボタン -->
-                    <UniformGrid  Grid.Column="3" Rows="2" Margin="5">
-                        <Viewbox Stretch="uniform" Margin="7">
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickNowWordUp">
-                                <Viewbox Stretch="uniform" Margin="5">
-                                    <Image Source="/rBtn.png" />
-                                </Viewbox>
-                            </Button>
-                        </Viewbox>
-                        <Viewbox Stretch="uniform" Margin="7">
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" VerticalAlignment="Center" Click="ClickWpmUp">
-                                <Viewbox Stretch="uniform" Margin="5">
-                                    <Image Source="/rBtn.png" />
-                                </Viewbox>
-                            </Button>
-                        </Viewbox>
-                    </UniformGrid>
-
-                    <!-- スライダー -->
-                    <UniformGrid  Grid.Column="2" Rows="2" Margin="8">
-                        <Slider x:Name="NowWordSlider" VerticalAlignment="Center"
+                        <!-- スライダー -->
+                        <UniformGrid  Grid.Column="2" Rows="2" Margin="8">
+                            <Slider x:Name="NowWordSlider" VerticalAlignment="Center"
                             LargeChange="10"
                             SmallChange="1" 
                             Maximum="1000"
                             Minimum="1" 
                             ValueChanged="NowWordSliderChanged" />
-                        <Slider x:Name="WpmSlider" VerticalAlignment="Center"
+                            <Slider x:Name="WpmSlider" VerticalAlignment="Center"
                             LargeChange="10"
                             SmallChange="1"
                             Maximum="1000"
                             Minimum="1" 
                             Value="300"
                             ValueChanged="WpmSliderChanged" />
-                    </UniformGrid>
+                        </UniformGrid>
 
 
-                    <!-- スライダーの値 -->
-                    <UniformGrid  Grid.Column="4" Rows="2" Margin="8">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="現在" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MS Gothic" />
-                            <TextBox x:Name="NowWordTextBox" Text="1" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" TextChanged="NowWordTextBoxChanged" FontFamily="MS Gothic" />
-                            <TextBlock Text="語目" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MS Gothic" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="WpmTextBox" Text="300" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" TextChanged="WpmTextBoxChanged" FontFamily="MS Gothic" />
-                            <TextBlock Text="行/分" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MS Gothic" />
-                        </StackPanel>
-                    </UniformGrid>
+                        <!-- スライダーの値 -->
+                        <UniformGrid  Grid.Column="4" Rows="2" Margin="8">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="現在" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MS Gothic" />
+                                <TextBox x:Name="NowWordTextBox" Text="1" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" TextChanged="NowWordTextBoxChanged" FontFamily="MS Gothic" />
+                                <TextBlock Text="語目" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MS Gothic" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="WpmTextBox" Text="300" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" TextChanged="WpmTextBoxChanged" FontFamily="MS Gothic" />
+                                <TextBlock Text="行/分" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MS Gothic" />
+                            </StackPanel>
+                        </UniformGrid>
+                    </Grid>
+                    <Image x:Name="IconR" Source="/rBtn.png" Visibility="Hidden"/>
+                    <Image x:Name="IconP" Source="/poseBtn.png" Visibility="Hidden"/>
                 </Grid>
-                <Image x:Name="IconR" Source="/rBtn.png" Visibility="Hidden"/>
-                <Image x:Name="IconP" Source="/poseBtn.png" Visibility="Hidden"/>
-            </Grid>
-        </DockPanel>
-    </Grid>
+            </DockPanel>
+        </Grid>
+    <!--
+    </materialDesign:DrawerHost>
+    -->
 </Page>
