@@ -58,24 +58,24 @@
                 </ListBox>
                 <!-- 右画面 -->
                 <Border Grid.Row="0" 
-                Grid.Column="1"
-                Grid.RowSpan="3"
-                BorderBrush="Black"
-                BorderThickness="2,0,0,0" />
+                        Grid.Column="1"
+                        Grid.RowSpan="3"
+                        BorderBrush="Black"
+                        BorderThickness="2,0,0,0" />
                 <!-- タイトル -->
                 <TextBlock x:Name="TitleTextBlock"
-                   Grid.Row="0" 
-                   Grid.Column="1" 
-                   FontSize="24" FontWeight="Bold"
-                   Padding="12"
-                   TextAlignment="Center" />
+                           Grid.Row="0" 
+                           Grid.Column="1" 
+                           FontSize="24" FontWeight="Bold"
+                           Padding="12"
+                           TextAlignment="Center" />
                 <!-- 本文 -->
                 <TextBlock x:Name="SentenceTextBlock" 
-                   Grid.Row="1" 
-                   Grid.Column="1" 
-                   TextWrapping="Wrap"  
-                   FontSize="14" FontWeight="Bold"
-                   Padding="12" />
+                           Grid.Row="1" 
+                           Grid.Column="1" 
+                           TextWrapping="Wrap"  
+                           FontSize="18" FontWeight="Bold"
+                           Padding="12" />
                 <Border Grid.Row="1" 
                 Grid.Column="1"
                 BorderBrush="Black"
